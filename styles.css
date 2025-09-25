@@ -1,0 +1,140 @@
+/* Inter font is loaded via Google Fonts in index.html */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f8fafc;
+  color: #444c56;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.hero {
+  background: #f4f6fb;
+  color: #23272f;
+  min-height: 40vh;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #6c757d;
+  letter-spacing: 0.02em;
+}
+
+.project-card {
+  border: 3px solid transparent;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(60,72,88,0.04);
+  background: #fff;
+  transition: box-shadow 0.2s, border 0.2s;
+  position: relative;
+  z-index: 1;
+}
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.1rem;
+  padding: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, #e0e7ff, #fbc2eb, #f8fafc, #a1c4fd, #e0e7ff 80%);
+  background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.3s, background-position 0.8s;
+}
+.project-card:hover {
+  box-shadow: 0 4px 24px 0 rgba(60,72,88,0.08);
+  border-color: transparent;
+}
+.project-card:hover::before {
+  opacity: 1;
+  background-position: 100% 0;
+  animation: shiny-border 1.2s linear infinite;
+}
+@keyframes shiny-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.card-title {
+  font-weight: 600;
+  color: #23272f;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+.news-section {
+  background: #f4f6fb;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  text-align: left;
+  max-width: 900px;
+  margin-left: 0;
+}
+.news-section h2 {
+  color: #444c56;
+  text-align: left;
+}
+#news-list {
+  padding: 0;
+  margin: 0;
+}
+.news-item {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 8px 0 rgba(60,72,88,0.06);
+  margin-bottom: 1.2rem;
+  font-size: 1.08rem;
+  padding: 1.1rem 1.3rem 0.7rem 1.3rem;
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.18s, border 0.18s;
+  text-align: left;
+}
+.news-item:last-child {
+  margin-bottom: 0;
+}
+.news-item:hover {
+  box-shadow: 0 4px 18px 0 rgba(60,72,88,0.10);
+  border-color: #c7d2fe;
+  background: #f0f4ff;
+}
+.news-item:hover,
+.news-item:hover a,
+.news-item:hover .news-desc {
+  color: #2a3a5e;
+}
+.news-item:hover a {
+  text-decoration: underline;
+}
+.news-item a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+.news-item a:hover {
+  color: #23272f;
+  text-decoration: underline;
+}
+
+.news-desc {
+  color: #8a94a6;
+  font-size: 0.97rem;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
